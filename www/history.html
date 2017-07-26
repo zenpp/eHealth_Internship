@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <title>eHealth Mobile</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">eHealth</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html"><i class="fa fa-home">  Home</i></a></li>
+            <li><a href="input.html"><i class="fa fa-pencil" > Input</i></a></li>
+            <li><a href="statistic.html"><i class="fa fa-bar-chart" > Statistic</i></a></li>
+            <li class="active" ><a href="history.html"><i class="fa fa-history" >  History</i></a></li>
+            <li><a href="suggestion.html"><i class="fa fa-line-chart">  Health Suggestion</i></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container text-center">
+    
+        <!--start content-->
+        <div class = "row">
+            <div class = "col-md-3">
+                
+               <h3>History</h3>
+
+                <div class="form-group">
+                    <label for="sel1"><h4>Select Type :</h4></label>
+                    <select class="form-control" id="type_option">
+                        <option value="min_bp">Minimum Blood Pressure</option>
+                        <option value="max_bp">Maximum Blood Pressure</option>
+                        <option value="heart_rate">Heart Rate</option>
+                        <option value="weight">Weight</option>
+                        <option value="bmi">B.M.I.</option>
+                    </select>
+                </div>
+                <div>
+                        <input type="submit" onclick="query_result()" class="btn btn-success btn-block" id = "query_result" value = "Search">
+                </div>
+                
+            </div>
+            <div class = "col-md-9">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><center>Record Time</center></th>
+                        <th><center>Value</center></th>
+                    </tr>
+                    </thead>
+                    <tbody id = "history_data">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+</body>
+
+</html>
